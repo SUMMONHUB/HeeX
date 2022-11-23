@@ -1,0 +1,30 @@
+local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+
+local PhantomForcesWindow = Library:NewWindow("ขี้เกียจครับ Hub")
+
+local KillingCheats = PhantomForcesWindow:NewSection("⚔️Main⚔️")
+ function itemequip(Toolse)
+    if game.Players.LocalPlayer.Backpack:FindFirstChild(Toolse) then
+        getgenv().tool = game.Players.LocalPlayer.Backpack:FindFirstChild(Toolse)
+        wait(.1)
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(tool)
+       end
+   end
+
+KillingCheats:CreateToggle("Auto Farm Strength", function(v)
+_G.AutoST = v
+while _G.AutoST do wait()
+     itemequip("Weight")
+     game:GetService("Players").LocalPlayer.muscleEvent:FireServer("rep")
+   end
+end)
+
+function RobloxNotify(Ti,tab,icon,sec)
+    game.StarterGui:SetCore("Hee Hub Excuter", {
+    Title = Ti,
+    Text = tab,
+    Icon = icon,
+    Duration = sec,
+    })
+end
+
